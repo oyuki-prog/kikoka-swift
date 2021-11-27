@@ -7,15 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40D0251F69F2D1C6EB9F97B /* Pods_kikoka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DFEC4AB8D48AB3ECCD7377F /* Pods_kikoka.framework */; };
+		D85A9A572752127500A75140 /* ShowQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A9A562752127500A75140 /* ShowQuestion.swift */; };
+		D85A9A61275215B400A75140 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85A9A60275215B400A75140 /* ShowViewController.swift */; };
+		D89606742751F008008BFFBE /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89606732751F008008BFFBE /* Question.swift */; };
+		D89606762751F0B4008BFFBE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89606752751F0B4008BFFBE /* User.swift */; };
+		D89606782751FC6F008BFFBE /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89606772751FC6F008BFFBE /* IndexViewController.swift */; };
+		D896067A2752016F008BFFBE /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89606792752016F008BFFBE /* Answer.swift */; };
+		D8A6BBBC27527707004C07C5 /* StoreQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A6BBBB27527707004C07C5 /* StoreQuestionViewController.swift */; };
 		D8D595A72751B45A006FFD1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D595A62751B45A006FFD1F /* AppDelegate.swift */; };
 		D8D595A92751B45A006FFD1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D595A82751B45A006FFD1F /* SceneDelegate.swift */; };
 		D8D595AB2751B45A006FFD1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D595AA2751B45A006FFD1F /* ViewController.swift */; };
 		D8D595AE2751B45A006FFD1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D595AC2751B45A006FFD1F /* Main.storyboard */; };
 		D8D595B02751B45B006FFD1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8D595AF2751B45B006FFD1F /* Assets.xcassets */; };
 		D8D595B32751B45B006FFD1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8D595B12751B45B006FFD1F /* LaunchScreen.storyboard */; };
+		D8D595BB2751B8CF006FFD1F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D595BA2751B8CF006FFD1F /* FirstViewController.swift */; };
+		D8D595C02751BAD5006FFD1F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D595BF2751BAD5006FFD1F /* Constants.swift */; };
+		D8D595C22751C3A7006FFD1F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D595C12751C3A7006FFD1F /* LoginViewController.swift */; };
+		D8D595C42751C3EF006FFD1F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D595C32751C3EF006FFD1F /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2109A44CCC1F40462428A9A7 /* Pods-kikoka.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kikoka.release.xcconfig"; path = "Target Support Files/Pods-kikoka/Pods-kikoka.release.xcconfig"; sourceTree = "<group>"; };
+		4DFEC4AB8D48AB3ECCD7377F /* Pods_kikoka.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kikoka.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B157BF1AB1D69DC1DFE1E40 /* Pods-kikoka.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kikoka.debug.xcconfig"; path = "Target Support Files/Pods-kikoka/Pods-kikoka.debug.xcconfig"; sourceTree = "<group>"; };
+		D85A9A562752127500A75140 /* ShowQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQuestion.swift; sourceTree = "<group>"; };
+		D85A9A60275215B400A75140 /* ShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		D89606732751F008008BFFBE /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		D89606752751F0B4008BFFBE /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D89606772751FC6F008BFFBE /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		D89606792752016F008BFFBE /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		D8A6BBBB27527707004C07C5 /* StoreQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreQuestionViewController.swift; sourceTree = "<group>"; };
 		D8D595A32751B45A006FFD1F /* kikoka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kikoka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D595A62751B45A006FFD1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8D595A82751B45A006FFD1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +46,10 @@
 		D8D595AF2751B45B006FFD1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8D595B22751B45B006FFD1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8D595B42751B45B006FFD1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8D595BA2751B8CF006FFD1F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		D8D595BF2751BAD5006FFD1F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D8D595C12751C3A7006FFD1F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D8D595C32751C3EF006FFD1F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +57,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C40D0251F69F2D1C6EB9F97B /* Pods_kikoka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223557F3D3D5243CF8B69994 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DFEC4AB8D48AB3ECCD7377F /* Pods_kikoka.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		83E6CC952E6A0B22900B42F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8B157BF1AB1D69DC1DFE1E40 /* Pods-kikoka.debug.xcconfig */,
+				2109A44CCC1F40462428A9A7 /* Pods-kikoka.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D8D5959A2751B45A006FFD1F = {
 			isa = PBXGroup;
 			children = (
 				D8D595A52751B45A006FFD1F /* kikoka */,
 				D8D595A42751B45A006FFD1F /* Products */,
+				83E6CC952E6A0B22900B42F5 /* Pods */,
+				223557F3D3D5243CF8B69994 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +102,34 @@
 		D8D595A52751B45A006FFD1F /* kikoka */ = {
 			isa = PBXGroup;
 			children = (
+				D8D595BE2751BAC2006FFD1F /* Structs */,
 				D8D595A62751B45A006FFD1F /* AppDelegate.swift */,
 				D8D595A82751B45A006FFD1F /* SceneDelegate.swift */,
 				D8D595AA2751B45A006FFD1F /* ViewController.swift */,
 				D8D595AC2751B45A006FFD1F /* Main.storyboard */,
+				D8A6BBBB27527707004C07C5 /* StoreQuestionViewController.swift */,
+				D85A9A60275215B400A75140 /* ShowViewController.swift */,
+				D8D595C32751C3EF006FFD1F /* RegisterViewController.swift */,
+				D89606772751FC6F008BFFBE /* IndexViewController.swift */,
+				D8D595C12751C3A7006FFD1F /* LoginViewController.swift */,
+				D8D595BA2751B8CF006FFD1F /* FirstViewController.swift */,
 				D8D595AF2751B45B006FFD1F /* Assets.xcassets */,
 				D8D595B12751B45B006FFD1F /* LaunchScreen.storyboard */,
 				D8D595B42751B45B006FFD1F /* Info.plist */,
 			);
 			path = kikoka;
+			sourceTree = "<group>";
+		};
+		D8D595BE2751BAC2006FFD1F /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				D8D595BF2751BAD5006FFD1F /* Constants.swift */,
+				D89606732751F008008BFFBE /* Question.swift */,
+				D89606752751F0B4008BFFBE /* User.swift */,
+				D89606792752016F008BFFBE /* Answer.swift */,
+				D85A9A562752127500A75140 /* ShowQuestion.swift */,
+			);
+			path = Structs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8D595B72751B45B006FFD1F /* Build configuration list for PBXNativeTarget "kikoka" */;
 			buildPhases = (
+				D20748F4D781C7254345A622 /* [CP] Check Pods Manifest.lock */,
 				D8D5959F2751B45A006FFD1F /* Sources */,
 				D8D595A02751B45A006FFD1F /* Frameworks */,
 				D8D595A12751B45A006FFD1F /* Resources */,
+				696E4CBABAB9F8DCFC681877 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +200,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		696E4CBABAB9F8DCFC681877 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kikoka/Pods-kikoka-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-kikoka/Pods-kikoka-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-kikoka/Pods-kikoka-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D20748F4D781C7254345A622 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kikoka-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D8D5959F2751B45A006FFD1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8A6BBBC27527707004C07C5 /* StoreQuestionViewController.swift in Sources */,
+				D8D595C22751C3A7006FFD1F /* LoginViewController.swift in Sources */,
+				D8D595C02751BAD5006FFD1F /* Constants.swift in Sources */,
 				D8D595AB2751B45A006FFD1F /* ViewController.swift in Sources */,
+				D89606742751F008008BFFBE /* Question.swift in Sources */,
+				D8D595C42751C3EF006FFD1F /* RegisterViewController.swift in Sources */,
 				D8D595A72751B45A006FFD1F /* AppDelegate.swift in Sources */,
+				D85A9A572752127500A75140 /* ShowQuestion.swift in Sources */,
 				D8D595A92751B45A006FFD1F /* SceneDelegate.swift in Sources */,
+				D89606762751F0B4008BFFBE /* User.swift in Sources */,
+				D85A9A61275215B400A75140 /* ShowViewController.swift in Sources */,
+				D896067A2752016F008BFFBE /* Answer.swift in Sources */,
+				D89606782751FC6F008BFFBE /* IndexViewController.swift in Sources */,
+				D8D595BB2751B8CF006FFD1F /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,11 +404,13 @@
 		};
 		D8D595B82751B45B006FFD1F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B157BF1AB1D69DC1DFE1E40 /* Pods-kikoka.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9V838VVBUM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kikoka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -311,11 +433,13 @@
 		};
 		D8D595B92751B45B006FFD1F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2109A44CCC1F40462428A9A7 /* Pods-kikoka.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9V838VVBUM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = kikoka/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
