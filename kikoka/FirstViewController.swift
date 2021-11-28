@@ -20,7 +20,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         let keychain = Keychain(service: self.consts.service)
         //        print(keychain["access_token"])
-//        keychain["access_token"] = nil //ログインの挙動を確かめたいときはこの行を有効にする
+        keychain["access_token"] = nil //ログインの挙動を確かめたいときはこの行を有効にする
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if keychain["access_token"] == nil {
                 let authVC = self.storyboard?.instantiateViewController(withIdentifier: "authVC") as! UIViewController
