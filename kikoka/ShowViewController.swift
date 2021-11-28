@@ -20,6 +20,7 @@ class ShowViewController: UIViewController {
     var answers: [Answer] = []
     var sortedAnswers: [Answer] = []
     var answer: Answer?
+    var myId: Int = 0
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var textViewHeight: NSLayoutConstraint!
@@ -35,10 +36,10 @@ class ShowViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(question!)
-        print(answers)
         showTableView.delegate = self
         showTableView.dataSource = self
+        senderButton.isEnabled = false
+        getUserInfo()
         
         self.sortedAnswers = answers.sorted {$0.id < $1.id } .map { $0 }
         
@@ -118,13 +119,47 @@ class ShowViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 self.sortedAnswers.append(Answer(id: json["answer"]["id"].int!,
-                                           body: json["answer"]["body"].string!,
-                                           elapsed: json["answer"]["elapsed"].string!,
-                                           user: User(id: json["answer"]["user"]["id"].int!,
-                                                      name: json["answer"]["user"]["name"].string!)))
+                                                 body: json["answer"]["body"].string!,
+                                                 elapsed: json["answer"]["elapsed"].string!,
+                                                 user: User(id: json["answer"]["user"]["id"].int!,
+                                                            name: json["answer"]["user"]["name"].string!)))
                 self.textView.text = ""
                 self.senderButton.isEnabled = false
                 self.showTableView.reloadData()
+                
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func getUserInfo() {
+        let keychain = Keychain(service: self.consts.service)
+        guard let token = keychain["access_token"] else {return}
+        let url = URL(string: consts.baseUrl + "/user")!
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "ACCEPT": "application/json",
+            "Authorization": "Bearer \(token)"
+        ]
+        
+        AF.request(url, method: .get, headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                self.myId = json["id"].int!
+                if self.myId == self.question!.user.id {
+                    self.senderButton.isEnabled = false
+                    self.textView.text = "自分の質問には回答できません"
+                } else {
+                    let answerd = self.sortedAnswers.filter({ $0.user.id == self.myId})
+                    if answerd.count == 0 {
+                        self.senderButton.isEnabled = true
+                    } else {
+                        self.textView.text = "回答済みの質問です"
+                    }
+                }
                 
             case .failure(let err):
                 print(err.localizedDescription)
@@ -192,6 +227,12 @@ extension ShowViewController: UITextViewDelegate {
             
         } else {
             self.textView.isScrollEnabled = true
+        }
+    }
+    
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if self.myId == self.question!.user.id {
+            senderButton.isEnabled = false
         }
     }
 }

@@ -14,12 +14,13 @@ import KeychainAccess
 class FirstViewController: UIViewController {
     let consts = Constants.shared
     var questions: [Question] = []
+    var nextUrl: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let keychain = Keychain(service: self.consts.service)
         //        print(keychain["access_token"])
-        keychain["access_token"] = nil //ログインの挙動を確かめたいときはこの行を有効にする
+//        keychain["access_token"] = nil //ログインの挙動を確かめたいときはこの行を有効にする
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             if keychain["access_token"] == nil {
                 let authVC = self.storyboard?.instantiateViewController(withIdentifier: "authVC") as! UIViewController
@@ -53,6 +54,10 @@ class FirstViewController: UIViewController {
                                                               name: question["user"]["name"].string!
                                           )))
                 }
+                print(json["questions"]["next_page_url"].string)
+                if json["questions"]["next_page_url"].string != nil {
+                    self.nextUrl = json["questions"]["next_page_url"].string!
+                }
                 self.transitionToIndexView()
             case .failure(let err):
                 print(err.localizedDescription)
@@ -65,6 +70,7 @@ class FirstViewController: UIViewController {
         let indexVC = indexNC.viewControllers[0] as! IndexViewController
         indexVC.questions = self.questions
         indexNC.modalPresentationStyle = .fullScreen
+        indexVC.nextUrl = self.nextUrl
         present(indexNC, animated: true, completion: nil)
     }
 

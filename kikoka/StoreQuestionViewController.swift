@@ -15,6 +15,8 @@ class StoreQuestionViewController: UIViewController {
     let consts = Constants.shared
     var token = ""
     var multiple: Decimal = 1.1
+    var coin = 0
+    var myId = 0
     
     var question: Question?
     
@@ -24,14 +26,27 @@ class StoreQuestionViewController: UIViewController {
     @IBOutlet weak var rewardField: UITextField!
     @IBOutlet weak var urgentSwitch: UISwitch!
     @IBOutlet weak var payLabel: UILabel!
+    @IBOutlet weak var myCoinLabel: UILabel!
+    @IBOutlet weak var cautionLabel: UILabel!
+    @IBOutlet weak var postButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserInfo()
+        postButton.isEnabled = false
         bodyTextView.layer.borderWidth = 2
         bodyTextView.layer.borderColor = UIColor.systemGray.cgColor
         bodyTextView.layer.cornerRadius = 10
         // Do any additional setup after loading the view.
+        let tapGR: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGR.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGR)
     }
+    
+    @objc func dismissKeyboard() {
+        self.view.endEditing(true)
+    }
+
     
     
     @IBAction func rewardFieldChanged(_ sender: Any) {
@@ -55,10 +70,22 @@ class StoreQuestionViewController: UIViewController {
                 let decimal = Decimal(string: rewardField.text!)! * 1.1
                 payLabel.text = "\(decimal)"
             }
+            
+            if Decimal(string: payLabel.text!)! > Decimal(string: myCoinLabel.text!)! {
+                cautionLabel.text = "コインが足りん!!"
+            } else {
+                cautionLabel.text = ""
+            }
+            
+            if cautionLabel.text! == "" && rewardField.text! != "" {
+                postButton.isEnabled = false
+            } else {
+                postButton.isEnabled = true
+            }
+            
         } else {
-            payLabel.text = ""
+            payLabel.text = "0"
         }
-
     }
     
     func postQuestion() {
@@ -99,6 +126,30 @@ class StoreQuestionViewController: UIViewController {
                 let showVC = self.storyboard?.instantiateViewController(withIdentifier: "showVC") as! ShowViewController
                 showVC.question = self.question
                 self.present(showVC, animated: true, completion: nil)
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
+        }
+    }
+    
+    func getUserInfo() {
+        let keychain = Keychain(service: self.consts.service)
+        guard let token = keychain["access_token"] else {return}
+        let url = URL(string: consts.baseUrl + "/user")!
+        let headers: HTTPHeaders = [
+            "Content-Type": "application/json",
+            "ACCEPT": "application/json",
+            "Authorization": "Bearer \(token)"
+        ]
+        
+        AF.request(url, method: .get, headers: headers).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                self.coin = json["coin"].int!
+                self.myId = json["id"].int!
+                self.myCoinLabel.text = String(self.coin)
             case .failure(let err):
                 print(err.localizedDescription)
             }

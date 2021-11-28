@@ -13,6 +13,7 @@ import KeychainAccess
 class LoginViewController: UIViewController {
     let consts = Constants.shared
     var token = ""
+    var nextUrl: String? = ""
     
     var questions: [Question] = []
     
@@ -78,6 +79,7 @@ class LoginViewController: UIViewController {
         let indexNC = self.storyboard?.instantiateViewController(withIdentifier: "indexNC") as! UINavigationController
         let indexVC = indexNC.viewControllers[0] as! IndexViewController
         indexVC.questions = self.questions
+        indexVC.nextUrl = self.nextUrl
         indexNC.modalPresentationStyle = .fullScreen
         present(indexNC, animated: true, completion: nil)
     }
@@ -128,6 +130,9 @@ class LoginViewController: UIViewController {
                                                    user: User(id: question["user"]["id"].int!,
                                                               name: question["user"]["name"].string!
                                           )))
+                }
+                if json["questions"]["next_page_url"].string != nil {
+                    self.nextUrl = json["questions"]["next_page_url"].string!
                 }
                 self.transitionToIndexView()
             case .failure(let err):
